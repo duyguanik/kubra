@@ -1,0 +1,130 @@
+html_content = """
+<!DOCTYPE html>
+<html lang='tr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Bugra Harika! 🌟</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff7a7a, #ffebeb);
+            color: #ff4d4d;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 45px;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff4d4d; }
+            to { text-shadow: 0 0 20px #ff0000; }
+        }
+        p {
+            font-size: 22px;
+        }
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+        }
+        #message, #emoji, #game {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+            color: #ff4081;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #game button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #game button:hover {
+            background-color: #d4006f;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>Bugra Harika! 🌟</h1>
+        <p>Her an Bugra ile dolu bir mutluluk! Bu site, senin ne kadar harika olduğunu bir kez daha göstermenin küçük bir yolu.</p>
+        <p>Harikasın Bugra! 💖</p>
+        <div class='heart'>❤️</div>
+        <button onclick='showMessage()'>Sürpriz İçin Tıkla! 💌</button>
+        <p id='message'>Sen en iyisisin, Bugra! 🌟</p>
+        <p id='emoji' style='font-size: 50px;'>🥰💖😘</p>
+
+        <button onclick='startGame()'>Eğlenceli Bir Oyun Oyna! 🎮</button>
+        <div id='game'>
+            <p>Favorini seç!</p>
+            <button onclick='showLove("Beni! ❤️")'>Beni! ❤️</button>
+            <button onclick='showLove("Pizza 🍕")'>Pizza 🍕</button>
+            <button onclick='showLove("Müzik 🎶")'>Müzik 🎶</button>
+            <p id='gameResult'></p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('emoji').style.display = 'block';
+            alert('Bugra, her şeyi daha güzel yapıyorsun! 💕');
+        }
+        function startGame() {
+            document.getElementById('game').style.display = 'block';
+        }
+        function showLove(choice) {
+            if (choice === "Beni! ❤️") {
+                document.getElementById('gameResult').innerText = "Doğru seçimi yaptın! 🥰❤️";
+            } else {
+                document.getElementById('gameResult').innerText = "Güzel bir seçim! 😜 Tekrar dene!";
+            }
+        }
+    </script>
+</body>
+</html>
+"""
+
+# Save the HTML file as index.html
+with open("index.html", "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+print("Bugra için web sitesi oluşturuldu! 'index.html' dosyasını indirerek görebilirsin.")
