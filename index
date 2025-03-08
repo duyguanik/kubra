@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugra'yı Seviyorum ❤️</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #ff4d4d;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 45px;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff4d4d; }
+            to { text-shadow: 0 0 20px #ff0000; }
+        }
+        p {
+            font-size: 22px;
+        }
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+        }
+        #message, #emoji, #game, #loveResult {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+            color: #ff4081;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #game button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #game button:hover {
+            background-color: #d4006f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bugra'yı Seviyorum ❤️</h1>
+        <p>Her gün seninle olmak çok özel, bu küçük web sayfası da seni sevdiğimi göstermek için bir yol!</p>
+        <p>Sen benim güneşim, neşem ve en büyük maceramsın. Seni çok seviyorum! ❤️</p>
+        <div class="heart">❤️</div>
+        <button onclick="showMessage()">Sürpriz İçin Tıkla! 💌</button>
+        <p id="message">Her günüm seninle daha parlak! 🌟</p>
+        <p id="emoji" style="font-size: 50px;">🥰💖😘</p>
+        
+        <button onclick="startGame()">Tatlı Bir Aşk Oyunu Oyna! 🎮</button>
+        <div id="game">
+            <p>En çok hangisini seversin?</p>
+            <button onclick="showLove('Beni! ❤️')">Beni! ❤️</button>
+            <button onclick="showLove('Türk Kahvesi ☕')">Türk Kahvesi ☕</button>
+            <button onclick="showLove('Uykuyu 😴')">Uykuyu 😴</button>
+            <p id="gameResult"></p>
+        </div>
+
+        <h2>Aşk Hesaplayıcı 💖</h2>
+        <p>Bugra ile aşk puanınızı öğrenin! 💕</p>
+        <input type="text" id="yourName" placeholder="Adınızı Girin" />
+        <input type="text" id="myName" placeholder="Bugra'nın Adı" />
+        <button onclick="calculateLove()">Aşk Puanı Hesapla 💘</button>
+        <p id="loveResult"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("emoji").style.display = "block";
+            alert("Sen hayatımın en güzel şeyisin! 💕");
+        }
+
+        function startGame() {
+            document.getElementById("game").style.display = "block";
+        }
+
+        function showLove(choice) {
+            if (choice === "Beni! ❤️") {
+                document.getElementById("gameResult").innerText = "Evet! Doğru seçimi yaptın! 🥰❤️";
+            } else {
+                document.getElementById("gameResult").innerText = "Hmm... Tekrar deneyin! 😜";
+            }
+        }
+
+        function calculateLove() {
+            var yourName = document.getElementById("yourName").value;
+            var myName = document.getElementById("myName").value;
+            var loveScore = Math.floor(Math.random() * 10) + 90;  // Aşk puanını her zaman %90 ya da daha yüksek yapar
+            var loveMessage = `Sen ve ben mükemmel bir eşleşmeyiz! ❤️ Aşk Puanı: ${loveScore}%`;
+            document.getElementById("loveResult").innerText = loveMessage;
+            document.getElementById("loveResult").style.display = "block";
+        }
+    </script>
+</body>
+</html>
